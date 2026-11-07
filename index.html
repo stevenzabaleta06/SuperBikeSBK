@@ -240,5 +240,22 @@
 
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
   <script src="script.js"></script>
+  
+  <!-- audio moto -->
+    <audio id="motoAudio" src="img/motocicleta.mp3" preload="auto"></audio>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const audio = document.getElementById('motoAudio');
+        const playPromise = audio.play();
+
+        if (playPromise !== undefined) {
+          playPromise.catch(error => {
+            document.addEventListener('click', () => {
+              audio.play();
+            }, { once: true });
+          });
+        }
+      });
+    </script>
 </body>
 </html>
